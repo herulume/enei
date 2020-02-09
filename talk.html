@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="author" content="(herulume)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/blood.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+<section id="slide-org6804ab7">
+<h2 id="org6804ab7">Living inside Emacs</h2>
+
+<div class="figure">
+<p><img src="./images/title.png" alt="title.png" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org932bb71">
+<h2 id="org932bb71">whoami</h2>
+<ul>
+<li>Eduardo Jorge</li>
+<li>Masters Student</li>
+<li>Interested in Category Theory, InfoSec, Functional Programming</li>
+
+</ul>
+</section>
+<section id="slide-orgf420d84">
+<h3 id="orgf420d84">Confession</h3>
+<p>
+Ex vim fanboy
+</p>
+
+<div class="figure">
+<p><img src="./images/vim.png" alt="vim.png" height="50%," width="50%" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org4ed5d5a">
+<h2 id="org4ed5d5a">Table of contents</h2>
+<ul>
+<li><a href="#/slide-org1daab9c">Emacs VS (neo)vi(m)</a></li>
+<li><a href="#/slide-org81d0d6c">Emacs overview</a></li>
+<li><a href="#/slide-org69d98bf">Emacs as an IDE</a></li>
+<li><a href="#/slide-org90344b8">Org mode</a></li>
+<li><a href="#/slide-org9f556f0">EmacsOS</a></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org1daab9c">
+<h2 id="org1daab9c">Emacs VS (neo)vi(m)</h2>
+
+<div class="figure">
+<p><img src="./images/emacsvim.png" alt="emacsvim.png" height="200%," width="200%" />
+</p>
+</div>
+</section>
+<section id="slide-org138476f">
+<h3 id="org138476f">As a text editor</h3>
+<ul>
+<li>Vim is a text editor</li>
+<li>Emacs HAS a text editor</li>
+
+</ul>
+</section>
+<section id="slide-orgea276a1">
+<h3 id="orgea276a1">As an IDE</h3>
+<ul>
+<li>In Vim your OS is the IDE</li>
+<li>In Emacs your IDE is the OS</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org81d0d6c">
+<h2 id="org81d0d6c">Emacs overview</h2>
+<div class="outline-text-2" id="text-org81d0d6c">
+</div>
+</section>
+<section id="slide-org6fa8b1d">
+<h3 id="org6fa8b1d">History</h3>
+<ul>
+<li>Started at MIT in 1972</li>
+<li>Based on TECO</li>
+<li>Richard Stallman added macro features 1976</li>
+<li>Stallman wrote the first Emacs (Editor MACRoS)</li>
+
+</ul>
+</section>
+<section id="slide-org5445e07">
+<h3 id="org5445e07">More than a text editor</h3>
+<div class="outline-text-3" id="text-org5445e07">
+</div>
+</section>
+<section id="slide-org17b7972">
+<h4 id="org17b7972">Framework to create IDEs</h4>
+<ul>
+<li>Extensible</li>
+<li>Small core written in C</li>
+<li>Everything else is ELisp</li>
+
+</ul>
+</section>
+<section id="slide-org2269734">
+<h3 id="org2269734">Packages</h3>
+
+<div class="figure">
+<p><img src="./images/packages.png" alt="packages.png" />
+</p>
+</div>
+</section>
+<section id="slide-org779328c">
+<h3 id="org779328c">Modes</h3>
+<div class="outline-text-3" id="text-org779328c">
+</div>
+</section>
+<section id="slide-org469456c">
+<h4 id="org469456c">Major modes</h4>
+<ul>
+<li>Each buffer has a major mode</li>
+<li>Each major mode customizes Emac's behavior</li>
+
+</ul>
+</section>
+<section id="slide-orgabc3aef">
+<h4 id="orgabc3aef">Minor modes</h4>
+<ul>
+<li>Each buffer has many minor modes</li>
+<li>Minor modes extend functionalities</li>
+
+</ul>
+</section>
+<section id="slide-orga1231c0">
+<h3 id="orga1231c0">Unix philosophy and workflow</h3>
+<div class="outline-text-3" id="text-orga1231c0">
+</div>
+</section>
+<section id="slide-orgb6a80de">
+<h4 id="orgb6a80de">Unix philosophy</h4>
+<p>
+Do one thing and do it well
+</p>
+</section>
+<section id="slide-org22ddcb2">
+<h4 id="org22ddcb2">Workflow</h4>
+<dl>
+<dt>Vim</dt><dd>Open as needed</dd>
+<dt>Emacs</dt><dd>Open it once and never close it</dd>
+
+</dl>
+</section>
+<section id="slide-orgc3dc610">
+<h3 id="orgc3dc610">Some notation</h3>
+<ul>
+<li>Buffers</li>
+<li>Windows</li>
+<li>Frames</li>
+
+</ul>
+</section>
+<section id="slide-org2aa5d61">
+<h3 id="org2aa5d61">Some notation</h3>
+
+<div class="figure">
+<p><img src="./images/notation.png" alt="notation.png" height="200%," width="200%" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org69d98bf">
+<h2 id="org69d98bf">Emacs as an IDE</h2>
+<div class="outline-text-2" id="text-org69d98bf">
+</div>
+</section>
+<section id="slide-org2f74a6c">
+<h3 id="org2f74a6c">Text Navigation</h3>
+<dl>
+<dt>Move a char forward</dt><dd>&lt;C-f&gt;</dd>
+<dt>Move a word forward</dt><dd>&lt;M-f&gt;</dd>
+<dt>Move up</dt><dd>&lt;C-p&gt;</dd>
+<dt>Move down</dt><dd>&lt;C-d&gt;</dd>
+<dt>Go to the end of the buffer</dt><dd>&lt;M-&lt;&gt;</dd>
+
+</dl>
+</section>
+<section id="slide-org6c17698">
+<h4 id="org6c17698">What you actually do</h4>
+<dl>
+<dt>Search</dt><dd>&lt;C-s&gt; or &lt;C-r&gt;</dd>
+<dt>End of line</dt><dd>&lt;C-e&gt;</dd>
+<dt>Beginning of line</dt><dd>&lt;C-a&gt;</dd>
+<dt>Kill word</dt><dd>&lt;M-d&gt;</dd>
+<dt>Expand region</dt><dd>Increases the selected region by semantic units</dd>
+
+</dl>
+</section>
+<section id="slide-orga06a081">
+<h4 id="orga06a081">Expand region</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package expand<span style="color: #ffb86c;">-</span>region
+  <span style="color: #ffb86c;">:</span>ensure t)
+(global<span style="color: #ffb86c;">-</span>set<span style="color: #ffb86c;">-</span>key (kbd <span style="color: #f1fa8c;">"C-+"</span>) 'er<span style="color: #ffb86c;">/</span>expand<span style="color: #ffb86c;">-</span>region)
+</code></pre>
+</div>
+</section>
+<section id="slide-orgfa565e4">
+<h4 id="orgfa565e4">Screw it use vim</h4>
+
+<div class="figure">
+<p><img src="./images/evilmeme.jpeg" alt="evilmeme.jpeg" height="200%," width="200%" />
+</p>
+</div>
+</section>
+<section id="slide-org02b4902">
+<h4 id="org02b4902">Screw it emulate vim</h4>
+<p>
+Evil mode
+</p>
+</section>
+<section id="slide-orgd28ac5e">
+<h3 id="orgd28ac5e">Major programming modes</h3>
+<ul>
+<li>Indentation</li>
+<li>Syntax highlight</li>
+<li>Integration with tools</li>
+<li>Organize imports</li>
+<li>ruby-mode, haskell-mode, go-mode, js2-mode</li>
+
+</ul>
+</section>
+<section id="slide-org51bd1af">
+<h4 id="org51bd1af">Config</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package go<span style="color: #ffb86c;">-</span>mode <span style="color: #ffb86c;">:</span>ensure t)
+</code></pre>
+</div>
+</section>
+<section id="slide-orga5700d1">
+<h3 id="orga5700d1">Syntax checking with Flycheck</h3>
+
+<div class="figure">
+<p><img src="./images/flycheck.png" alt="flycheck.png" />
+</p>
+</div>
+</section>
+<section id="slide-org9a563fe">
+<h4 id="org9a563fe">Config</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package <span style="color: #8be9fd;">flycheck</span>
+  <span style="color: #ffb86c;">:</span>ensure t
+  <span style="color: #ffb86c;">:</span>diminish
+  <span style="color: #ffb86c;">:</span>init (global<span style="color: #ffb86c;">-</span>flycheck<span style="color: #ffb86c;">-</span>mode))
+</code></pre>
+</div>
+</section>
+<section id="slide-orgcdee667">
+<h3 id="orgcdee667">Code completion with Company</h3>
+
+<div class="figure">
+<p><img src="./images/company.png" alt="company.png" />
+</p>
+</div>
+</section>
+<section id="slide-org9892307">
+<h4 id="org9892307">Config</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package <span style="color: #8be9fd;">company</span>
+  <span style="color: #ffb86c;">:</span>ensure t
+  <span style="color: #ffb86c;">:</span>diminish company<span style="color: #ffb86c;">-</span>mode
+  <span style="color: #ffb86c;">:</span>hook (prog<span style="color: #ffb86c;">-</span>mode <span style="color: #ffb86c;">.</span> company<span style="color: #ffb86c;">-</span>mode)
+  <span style="color: #ffb86c;">:</span>config
+    (with<span style="color: #ffb86c;">-</span>eval<span style="color: #ffb86c;">-</span>after<span style="color: #ffb86c;">-</span>load 'company
+      (define<span style="color: #ffb86c;">-</span>key company<span style="color: #ffb86c;">-</span>active<span style="color: #ffb86c;">-</span>map (kbd <span style="color: #f1fa8c;">"C-n"</span>) 'company<span style="color: #ffb86c;">-</span>select<span style="color: #ffb86c;">-</span>next)
+      (define<span style="color: #ffb86c;">-</span>key company<span style="color: #ffb86c;">-</span>active<span style="color: #ffb86c;">-</span>map (kbd <span style="color: #f1fa8c;">"C-p"</span>) 'company<span style="color: #ffb86c;">-</span>select<span style="color: #ffb86c;">-</span>previous)))
+</code></pre>
+</div>
+</section>
+<section id="slide-org6ae23f2">
+<h3 id="org6ae23f2">Bring it all together with LSP</h3>
+<ul>
+<li>Language Server Protocol</li>
+<li id="Client">Text editor or IDE</li>
+<li id="Server">"Smartness provider"</li>
+
+</ul>
+</section>
+<section id="slide-orgc09d8ce">
+<h4 id="orgc09d8ce">Features</h4>
+<ul>
+<li>Auto complete</li>
+<li>Goto definition</li>
+<li>Find all references</li>
+<li>Other IDE stuff</li>
+
+</ul>
+</section>
+<section id="slide-org11b3782">
+<h4 id="org11b3782">Features</h4>
+
+<div class="figure">
+<p><img src="./images/lsp1.png" alt="lsp1.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgb60ca1b">
+<h4 id="orgb60ca1b">Config</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package lsp<span style="color: #ffb86c;">-</span>mode
+  <span style="color: #ffb86c;">:</span>init (<span style="color: #ff79c6; font-weight: bold;">setq</span> lsp<span style="color: #ffb86c;">-</span>keymap<span style="color: #ffb86c;">-</span>prefix <span style="color: #f1fa8c;">"s-l"</span>)
+  <span style="color: #ffb86c;">:</span>hook (XXX<span style="color: #ffb86c;">-</span>mode <span style="color: #ffb86c;">.</span> lsp)
+  <span style="color: #ffb86c;">:</span>commands lsp)
+</code></pre>
+</div>
+</section>
+<section id="slide-org13b67ab">
+<h4 id="org13b67ab">Documentation</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package lsp<span style="color: #ffb86c;">-</span>ui
+  <span style="color: #ffb86c;">:</span>ensure t
+  <span style="color: #ffb86c;">:</span>commands lsp<span style="color: #ffb86c;">-</span>ui<span style="color: #ffb86c;">-</span>mode)
+</code></pre>
+</div>
+</section>
+<section id="slide-org149be31">
+<h4 id="org149be31">Documentation</h4>
+
+<div class="figure">
+<p><img src="./images/lsp2.png" alt="lsp2.png" height="80%," width="80%" />
+</p>
+</div>
+</section>
+<section id="slide-org4c21d12">
+<h4 id="org4c21d12">Debugger</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package dap<span style="color: #ffb86c;">-</span>mode
+  <span style="color: #ffb86c;">:</span>after lsp<span style="color: #ffb86c;">-</span>mode
+  <span style="color: #ffb86c;">:</span>config
+  (dap<span style="color: #ffb86c;">-</span>mode t)
+  (dap<span style="color: #ffb86c;">-</span>ui<span style="color: #ffb86c;">-</span>mode t))
+(use<span style="color: #ffb86c;">-</span>package dap<span style="color: #ffb86c;">-</span>XXX)
+</code></pre>
+</div>
+</section>
+<section id="slide-org67198f3">
+<h4 id="org67198f3">Integrate with company</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package company<span style="color: #ffb86c;">-</span>lsp <span style="color: #ffb86c;">:</span>commands company<span style="color: #ffb86c;">-</span>lsp)
+</code></pre>
+</div>
+
+<div class="figure">
+<p><img src="./images/lsp3.png" alt="lsp3.png" />
+</p>
+</div>
+</section>
+<section id="slide-org8c3f9c6">
+<h3 id="org8c3f9c6">Code snippets</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package <span style="color: #8be9fd;">yasnippet</span>
+  <span style="color: #ffb86c;">:</span>ensure t
+  <span style="color: #ffb86c;">:</span>diminish yas<span style="color: #ffb86c;">-</span>minor<span style="color: #ffb86c;">-</span>mode
+  <span style="color: #ffb86c;">:</span>init (yas<span style="color: #ffb86c;">-</span>global<span style="color: #ffb86c;">-</span>mode <span style="color: #8be9fd;">1</span>))
+
+(use<span style="color: #ffb86c;">-</span>package yasnippet<span style="color: #ffb86c;">-</span>snippets
+  <span style="color: #ffb86c;">:</span>ensure t
+  <span style="color: #ffb86c;">:</span>diminish)
+</code></pre>
+</div>
+</section>
+<section id="slide-orgf57337e">
+<h3 id="orgf57337e">Projectile</h3>
+<ul>
+<li>Operate on a project level</li>
+<li>Find project files</li>
+<li>Find tests</li>
+<li>Toggle between files with different extensions</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package <span style="color: #8be9fd;">projectile</span>
+  <span style="color: #ffb86c;">:</span>ensure t
+  <span style="color: #ffb86c;">:</span>diminish
+  <span style="color: #ffb86c;">:</span>config
+  (define<span style="color: #ffb86c;">-</span>key projectile<span style="color: #ffb86c;">-</span>mode<span style="color: #ffb86c;">-</span>map (kbd <span style="color: #f1fa8c;">"C-c p"</span>) 'projectile<span style="color: #ffb86c;">-</span>command<span style="color: #ffb86c;">-</span>map)
+  (projectile<span style="color: #ffb86c;">-</span>mode <span style="color: #8be9fd;">+1</span>))
+</code></pre>
+</div>
+</section>
+<section id="slide-orgf288d78">
+<h3 id="orgf288d78">Magit</h3>
+
+<div class="figure">
+<p><img src="./images/magit.png" alt="magit.png" height="60%," width="60%" />
+</p>
+</div>
+</section>
+<section id="slide-orgd84e986">
+<h4 id="orgd84e986">Why</h4>
+<ul>
+<li>Same keybindings</li>
+<li>Same text render and highlight when coding</li>
+<li>Can interact with git without leaving the buffer (git blame)</li>
+
+</ul>
+</section>
+<section id="slide-org58b250e">
+<h4 id="org58b250e">How it works</h4>
+<ul>
+<li>Top level actions</li>
+<li>Sub-actions</li>
+<li>Modifiers</li>
+
+</ul>
+</section>
+<section id="slide-orgf756fd3">
+<h4 id="orgf756fd3">Example</h4>
+
+<div class="figure">
+<p><img src="./images/r.png" alt="r.png" height="80%," width="80%" />
+</p>
+</div>
+</section>
+<section id="slide-org2fc527b">
+<h3 id="org2fc527b">TRAMP</h3>
+<ul>
+<li>Transparent Remote (file) Access, Multiple Protocol</li>
+<li>Works over FTP, SSH, etc</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org90344b8">
+<h2 id="org90344b8">Org mode</h2>
+<p>
+Your life in plain text
+</p>
+</section>
+<section id="slide-orgeb37df4">
+<h3 id="orgeb37df4">Purpose</h3>
+<div class="outline-text-3" id="text-orgeb37df4">
+</div>
+</section>
+<section id="slide-org0bda7a6">
+<h4 id="org0bda7a6">A fast and effective plain-text system for</h4>
+<ul>
+<li>Keeping notes</li>
+<li>Maintaining TODO lists</li>
+<li>Planning projects</li>
+<li>Authoring documents</li>
+
+</ul>
+</section>
+<section id="slide-org34fac20">
+<h3 id="org34fac20">Note taking</h3>
+<div class="outline-text-3" id="text-org34fac20">
+</div>
+</section>
+<section id="slide-org085bf6b">
+<h4 id="org085bf6b">Text</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim><span style="color: #ffb86c;">*</span> Dependable Distributed Systems
+<span style="color: #ffb86c;">**</span> Class <span style="color: #8be9fd;">1</span>
+   <span style="color: #ffb86c;">*</span> &#218;nica forma de tolerar (<span style="color: #ffb86c;">...</span>)
+   <span style="color: #ffb86c;">*</span> R&#233;plicas de componentes (<span style="color: #ffb86c;">...</span>)
+   <span style="color: #ffb86c;">*</span> Comunica&#231;&#227;o em grupo tem (<span style="color: #ffb86c;">...</span>)
+<span style="color: #ffb86c;">***</span> Faults<span style="color: #ffb86c;">,</span> Errors<span style="color: #ffb86c;">,</span> and Failures
+    Falta <span style="color: #ffb86c;">::</span> defeito
+</code></pre>
+</div>
+</section>
+<section id="slide-org68ad0ad">
+<h4 id="org68ad0ad">Result</h4>
+
+<div class="figure">
+<p><img src="./images/notes.png" alt="notes.png" />
+</p>
+</div>
+</section>
+<section id="slide-org1221ea9">
+<h3 id="org1221ea9"><span class="todo TODO">TODO</span> s</h3>
+<div class="outline-text-3" id="text-org1221ea9">
+</div>
+</section>
+<section id="slide-org9ad468f">
+<h4 id="org9ad468f">Text</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>#<span style="color: #ffb86c;">+</span>TODO<span style="color: #ffb86c;">:</span> TODO IN<span style="color: #ffb86c;">-</span>PROGRESS HELD<span style="color: #ffb86c;">-</span>BLOCKED HELD<span style="color: #ffb86c;">-</span>FROZEN REVIEW DONE
+
+<span style="color: #ffb86c;">*</span> Todo
+<span style="color: #ffb86c;">**</span> DONE Criar org file com datas
+<span style="color: #ffb86c;">**</span> TODO Fazer slides
+   DEADLINE<span style="color: #ffb86c;">:</span> <span style="color: #ffb86c;">&lt;</span>2020<span style="color: #ffb86c;">-</span>02<span style="color: #ffb86c;">-</span>24 seg<span style="color: #ffb86c;">&gt;</span>
+   <span style="color: #ffb86c;">:</span>LOGBOOK<span style="color: #ffb86c;">:</span>
+   CLOCK<span style="color: #ffb86c;">:</span> [2020<span style="color: #ffb86c;">-</span>02<span style="color: #ffb86c;">-</span>24 seg 01<span style="color: #ffb86c;">:</span>34]<span style="color: #ffb86c;">--</span>[2020<span style="color: #ffb86c;">-</span>02<span style="color: #ffb86c;">-</span>24 seg 01<span style="color: #ffb86c;">:</span>35] <span style="color: #ffb86c;">=&gt;</span>  0<span style="color: #ffb86c;">:</span>01
+   <span style="color: #ffb86c;">:</span>END<span style="color: #ffb86c;">:</span>
+<span style="color: #ffb86c;">**</span> HELD<span style="color: #ffb86c;">-</span>FROZEN Ficha(s) Analise
+DEADLINE<span style="color: #ffb86c;">:</span> <span style="color: #ffb86c;">&lt;</span>2020<span style="color: #ffb86c;">-</span>02<span style="color: #ffb86c;">-</span>24 seg<span style="color: #ffb86c;">&gt;</span>
+</code></pre>
+</div>
+</section>
+<section id="slide-orgf7716c8">
+<h4 id="orgf7716c8">Result</h4>
+
+<div class="figure">
+<p><img src="./images/todo.png" alt="todo.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgc153f2b">
+<h3 id="orgc153f2b">Agenda</h3>
+
+<div class="figure">
+<p><img src="./images/agenda.png" alt="agenda.png" />
+</p>
+</div>
+</section>
+<section id="slide-org0080541">
+<h3 id="org0080541">Dashboard</h3>
+
+<div class="figure">
+<p><img src="./images/dash.png" alt="dash.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgcd62888">
+<h3 id="orgcd62888">Presentations with revealjs</h3>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(<span style="color: #ff79c6; font-weight: bold;">defun</span> herulume<span style="color: #ffb86c;">/</span>publish<span style="color: #ffb86c;">-</span>talk (message)
+  <span style="color: #6272a4;">"Save current org file and publish it as a revealjs talk"</span>
+  (<span style="color: #ff79c6; font-weight: bold;">interactive</span> <span style="color: #f1fa8c;">"sCommit message: "</span>)
+  (save<span style="color: #ffb86c;">-</span>buffer)
+  (org<span style="color: #ffb86c;">-</span>reveal<span style="color: #ffb86c;">-</span>export<span style="color: #ffb86c;">-</span>to<span style="color: #ffb86c;">-</span>html)
+  (magit<span style="color: #ffb86c;">-</span>stage<span style="color: #ffb86c;">-</span>modified)
+  (magit<span style="color: #ffb86c;">-</span>call<span style="color: #ffb86c;">-</span>git <span style="color: #f1fa8c;">"commit"</span> <span style="color: #f1fa8c;">"-m"</span> message)
+  (magit<span style="color: #ffb86c;">-</span>call<span style="color: #ffb86c;">-</span>git <span style="color: #f1fa8c;">"push"</span> <span style="color: #f1fa8c;">"origin"</span>))
+</code></pre>
+</div>
+</section>
+<section id="slide-org54dfa88">
+<h3 id="org54dfa88">Email</h3>
+
+<div class="figure">
+<p><img src="./images/mail.png" alt="mail.png" height="80%," width="80%" />
+</p>
+</div>
+</section>
+<section id="slide-orgfda86d6">
+<h3 id="orgfda86d6">Ledger and finances</h3>
+<ul>
+<li>For every debit there is at least one credit</li>
+<li>All debits and credits in the same transaction, must sum to zero</li>
+
+</ul>
+</section>
+<section id="slide-org1dd6ba8">
+<h4 id="org1dd6ba8">Terminology</h4>
+<dl>
+<dt>Account</dt><dd>A label describing an amount of something</dd>
+<dt>Credit</dt><dd>The addition of value to an account</dd>
+<dt>Debit</dt><dd>The deduction of value from an account</dd>
+<dt>Transaction</dt><dd>A collection of credits and debits with a timestamp</dd>
+
+</dl>
+</section>
+<section id="slide-org888e342">
+<h4 id="org888e342">Five common categories of accounts</h4>
+<dl>
+<dt>Assets</dt><dd>Bank accounts, wallet</dd>
+<dt>Income</dt><dd>paychecks, gifts, interest</dd>
+<dt>Expenses</dt><dd>groceries, taxes</dd>
+<dt>Liabilities</dt><dd>mortgage, student loans</dd>
+<dt>Equity</dt><dd>everything else</dd>
+
+</dl>
+</section>
+<section id="slide-orge2dc674">
+<h4 id="orge2dc674">Example of a transaction</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>2020<span style="color: #ffb86c;">-</span>01<span style="color: #ffb86c;">-</span>30 Coffee
+  <span style="color: #6272a4;">; </span><span style="color: #6272a4;">loja do cafe</span>
+  Expenses<span style="color: #ffb86c;">:</span>Restaurants<span style="color: #ffb86c;">:</span>Coffee <span style="color: #8be9fd;">3.00</span> EUR
+  Assets<span style="color: #ffb86c;">:</span>Cash<span style="color: #ffb86c;">:</span>Wallet         <span style="color: #8be9fd;">-3.00</span> EUR
+</code></pre>
+</div>
+</section>
+<section id="slide-org6e26545">
+<h4 id="org6e26545">Report</h4>
+
+<div class="figure">
+<p><img src="./images/ledger.png" alt="ledger.png" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org9f556f0">
+<h2 id="org9f556f0">EmacsOS</h2>
+<div class="outline-text-2" id="text-org9f556f0">
+</div>
+</section>
+<section id="slide-orgd8a8100">
+<h3 id="orgd8a8100">Window manager (EXWM)</h3>
+<ul>
+<li>Same config</li>
+<li>Global keybindings</li>
+<li>Single threaded</li>
+<li>No wallpaper</li>
+<li>One core developer</li>
+
+</ul>
+</section>
+<section id="slide-orga75ec69">
+<h4 id="orga75ec69">Global keybindings</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(exwm<span style="color: #ffb86c;">-</span>input<span style="color: #ffb86c;">-</span>set<span style="color: #ffb86c;">-</span>simulation<span style="color: #ffb86c;">-</span>keys
+    '(
+      <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">cut/paste</span>
+      ([<span style="color: #ffb86c;">?</span>\C<span style="color: #ffb86c;">-</span>w] <span style="color: #ffb86c;">.</span> <span style="color: #ffb86c;">?</span>\C<span style="color: #ffb86c;">-</span>x)
+      ([<span style="color: #ffb86c;">?</span>\M<span style="color: #ffb86c;">-</span>w] <span style="color: #ffb86c;">.</span> <span style="color: #ffb86c;">?</span>\C<span style="color: #ffb86c;">-</span>c)
+      ([<span style="color: #ffb86c;">?</span>\C<span style="color: #ffb86c;">-</span>y] <span style="color: #ffb86c;">.</span> <span style="color: #ffb86c;">?</span>\C<span style="color: #ffb86c;">-</span>v)
+      <span style="color: #6272a4;">;; </span><span style="color: #6272a4;">search</span>
+      ([<span style="color: #ffb86c;">?</span>\C<span style="color: #ffb86c;">-</span>s] <span style="color: #ffb86c;">.</span> <span style="color: #ffb86c;">?</span>\C<span style="color: #ffb86c;">-</span>f)))
+</code></pre>
+</div>
+</section>
+<section id="slide-org823a70a">
+<h4 id="org823a70a">Randr</h4>
+<div class="org-src-container">
+
+<pre  class="src src-emacs-lisp"><code trim>(<span style="color: #ff79c6; font-weight: bold;">require</span> 'exwm<span style="color: #ffb86c;">-</span>randr)
+  (<span style="color: #ff79c6; font-weight: bold;">setq</span> exwm<span style="color: #ffb86c;">-</span>randr<span style="color: #ffb86c;">-</span>workspace<span style="color: #ffb86c;">-</span>output<span style="color: #ffb86c;">-</span>plist '(<span style="color: #8be9fd;">0</span> <span style="color: #f1fa8c;">"eDP1"</span> <span style="color: #8be9fd;">1</span> <span style="color: #f1fa8c;">"HDMI1"</span>))
+  (add<span style="color: #ffb86c;">-</span>hook 'exwm<span style="color: #ffb86c;">-</span>randr<span style="color: #ffb86c;">-</span>screen<span style="color: #ffb86c;">-</span>change<span style="color: #ffb86c;">-</span>hook
+    (<span style="color: #ff79c6; font-weight: bold;">lambda</span> ()
+      (start<span style="color: #ffb86c;">-</span>process<span style="color: #ffb86c;">-</span>shell<span style="color: #ffb86c;">-</span>command
+        <span style="color: #f1fa8c;">"xrandr"</span> nil <span style="color: #f1fa8c;">"xrandr --output HDMI1 --right-of eDP1 --auto"</span>)))
+(exwm<span style="color: #ffb86c;">-</span>randr<span style="color: #ffb86c;">-</span>enable)
+</code></pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

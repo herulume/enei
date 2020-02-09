@@ -1,0 +1,308 @@
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+OPTIONS: num:nil toc:nil reveal_title_slide:nil
+#+REVEAL_TRANS: linear
+#+REVEAL_THEME: blood
+
+* Living inside Emacs
+  [[file:./images/title.png]]
+* whoami
+  * Eduardo Jorge
+  * Masters Student
+  * Interested in Category Theory, InfoSec, Functional Programming
+** Confession
+   Ex vim fanboy
+   #+ATTR_HTML: :height 50%, :width 50%
+   [[file:./images/vim.png]]
+* Table of contents
+  - [[Emacs VS (neo)vi(m)][Emacs VS (neo)vi(m)]]
+  - [[Emacs overview][Emacs overview]]
+  - [[Emacs as an IDE][Emacs as an IDE]]
+  - [[Org mode][Org mode]]
+  - [[EmacsOS][EmacsOS]]
+* Emacs VS (neo)vi(m)
+  #+ATTR_HTML: :height 200%, :width 200%
+  [[./images/emacsvim.png]]
+** As a text editor
+   * Vim is a text editor
+   * Emacs HAS a text editor
+** As an IDE
+   * In Vim your OS is the IDE
+   * In Emacs your IDE is the OS
+* Emacs overview
+** History
+   * Started at MIT in 1972
+   * Based on TECO
+   * Richard Stallman added macro features 1976
+   * Stallman wrote the first Emacs (Editor MACRoS)
+** More than a text editor
+*** Framework to create IDEs
+    * Extensible
+    * Small core written in C
+    * Everything else is ELisp
+** Packages
+    [[file:./images/packages.png]]
+** Modes
+*** Major modes
+   * Each buffer has a major mode
+   * Each major mode customizes Emac's behavior
+*** Minor modes
+   * Each buffer has many minor modes
+   * Minor modes extend functionalities
+** Unix philosophy and workflow
+*** Unix philosophy
+    Do one thing and do it well
+*** Workflow
+    * Vim :: Open as needed
+    * Emacs :: Open it once and never close it
+** Some notation
+   * Buffers
+   * Windows
+   * Frames
+** Some notation
+   #+ATTR_HTML: :height 200%, :width 200%
+   [[./images/notation.png]]
+* Emacs as an IDE
+** Text Navigation
+   * Move a char forward :: <C-f>
+   * Move a word forward :: <M-f>
+   * Move up :: <C-p>
+   * Move down :: <C-d>
+   * Go to the end of the buffer :: <M-<>
+*** What you actually do
+    * Search :: <C-s> or <C-r>
+    * End of line :: <C-e>
+    * Beginning of line :: <C-a>
+    * Kill word :: <M-d>
+    * Expand region :: Increases the selected region by semantic units
+*** Expand region
+#+BEGIN_SRC emacs-lisp
+(use-package expand-region
+  :ensure t)
+(global-set-key (kbd "C-+") 'er/expand-region)
+#+END_SRC
+*** Screw it use vim
+    #+ATTR_HTML: :height 200%, :width 200%
+    [[./images/evilmeme.jpeg]]
+*** Screw it emulate vim
+    Evil mode
+** Major programming modes
+   * Indentation
+   * Syntax highlight
+   * Integration with tools
+   * Organize imports
+   * ruby-mode, haskell-mode, go-mode, js2-mode
+*** Config
+#+BEGIN_SRC emacs-lisp
+(use-package go-mode :ensure t)
+#+END_SRC
+** Syntax checking with Flycheck
+   [[./images/flycheck.png]]
+*** Config
+#+BEGIN_SRC emacs-lisp
+(use-package flycheck
+  :ensure t
+  :diminish
+  :init (global-flycheck-mode))
+#+END_SRC
+** Code completion with Company
+   [[./images/company.png]]
+*** Config
+#+BEGIN_SRC emacs-lisp
+(use-package company
+  :ensure t
+  :diminish company-mode
+  :hook (prog-mode . company-mode)
+  :config
+    (with-eval-after-load 'company
+      (define-key company-active-map (kbd "C-n") 'company-select-next)
+      (define-key company-active-map (kbd "C-p") 'company-select-previous)))
+#+END_SRC
+** Bring it all together with LSP
+   * Language Server Protocol
+   * Client :: Text editor or IDE
+   * Server :: "Smartness provider"
+*** Features
+   * Auto complete
+   * Goto definition
+   * Find all references
+   * Other IDE stuff
+*** Features
+[[./images/lsp1.png]]
+*** Config
+#+BEGIN_SRC emacs-lisp
+(use-package lsp-mode
+  :init (setq lsp-keymap-prefix "s-l")
+  :hook (XXX-mode . lsp)
+  :commands lsp)
+#+END_SRC
+*** Documentation
+#+BEGIN_SRC emacs-lisp
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode)
+#+END_SRC
+*** Documentation
+    #+ATTR_HTML: :height 80%, :width 80%
+    [[./images/lsp2.png]]
+*** Debugger
+#+BEGIN_SRC emacs-lisp
+(use-package dap-mode
+  :after lsp-mode
+  :config
+  (dap-mode t)
+  (dap-ui-mode t))
+(use-package dap-XXX)
+#+END_SRC
+*** Integrate with company
+#+BEGIN_SRC emacs-lisp
+(use-package company-lsp :commands company-lsp)
+#+END_SRC
+[[./images/lsp3.png]]
+** Code snippets
+#+BEGIN_SRC emacs-lisp
+(use-package yasnippet
+  :ensure t
+  :diminish yas-minor-mode
+  :init (yas-global-mode 1))
+
+(use-package yasnippet-snippets
+  :ensure t
+  :diminish)
+#+END_SRC
+** Projectile
+   * Operate on a project level
+   * Find project files
+   * Find tests
+   * Toggle between files with different extensions
+#+BEGIN_SRC emacs-lisp
+(use-package projectile
+  :ensure t
+  :diminish
+  :config
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (projectile-mode +1))
+#+END_SRC
+** Magit
+   #+ATTR_HTML: :height 60%, :width 60%
+   [[./images/magit.png]]
+*** Why
+    * Same keybindings
+    * Same text render and highlight when coding
+    * Can interact with git without leaving the buffer (git blame)
+*** How it works
+    * Top level actions
+    * Sub-actions
+    * Modifiers
+*** Example
+   #+ATTR_HTML: :height 80%, :width 80%
+   [[./images/r.png]]
+** TRAMP
+   * Transparent Remote (file) Access, Multiple Protocol
+   * Works over FTP, SSH, etc
+* Org mode
+  Your life in plain text
+** Purpose
+*** A fast and effective plain-text system for
+   * Keeping notes
+   * Maintaining TODO lists
+   * Planning projects
+   * Authoring documents
+** Note taking
+*** Text
+#+BEGIN_SRC emacs-lisp
+ * Dependable Distributed Systems
+ ** Class 1
+    * Única forma de tolerar (...)
+    * Réplicas de componentes (...)
+    * Comunicação em grupo tem (...)
+ *** Faults, Errors, and Failures
+     Falta :: defeito
+#+END_SRC
+*** Result
+[[./images/notes.png]]
+** TODOs
+*** Text
+#+BEGIN_SRC emacs-lisp
+ #+TODO: TODO IN-PROGRESS HELD-BLOCKED HELD-FROZEN REVIEW DONE
+
+ * Todo
+ ** DONE Criar org file com datas
+ ** TODO Fazer slides
+    DEADLINE: <2020-02-24 seg>
+    :LOGBOOK:
+    CLOCK: [2020-02-24 seg 01:34]--[2020-02-24 seg 01:35] =>  0:01
+    :END:
+ ** HELD-FROZEN Ficha(s) Analise
+ DEADLINE: <2020-02-24 seg>
+#+END_SRC
+*** Result
+[[./images/todo.png]]
+** Agenda
+[[./images/agenda.png]]
+** Dashboard
+[[./images/dash.png]]
+** Presentations with revealjs
+#+BEGIN_SRC emacs-lisp
+(defun herulume/publish-talk (message)
+  "Save current org file and publish it as a revealjs talk"
+  (interactive "sCommit message: ")
+  (save-buffer)
+  (org-reveal-export-to-html)
+  (magit-stage-modified)
+  (magit-call-git "commit" "-m" message)
+  (magit-call-git "push" "origin"))
+#+END_SRC
+** Email
+   #+ATTR_HTML: :height 80%, :width 80%
+   [[./images/mail.png]]
+** Ledger and finances
+   * For every debit there is at least one credit
+   * All debits and credits in the same transaction, must sum to zero
+*** Terminology
+   * Account :: A label describing an amount of something
+   * Credit :: The addition of value to an account
+   * Debit :: The deduction of value from an account
+   * Transaction :: A collection of credits and debits with a timestamp
+*** Five common categories of accounts
+    * Assets :: Bank accounts, wallet
+    * Income :: paychecks, gifts, interest
+    * Expenses :: groceries, taxes
+    * Liabilities :: mortgage, student loans
+    * Equity :: everything else
+*** Example of a transaction
+#+BEGIN_SRC emacs-lisp
+2020-01-30 Coffee
+  ; loja do cafe
+  Expenses:Restaurants:Coffee 3.00 EUR
+  Assets:Cash:Wallet         -3.00 EUR
+#+END_SRC
+*** Report
+[[./images/ledger.png]]
+* EmacsOS
+** Window manager (EXWM)
+   * Same config
+   * Global keybindings
+   * Single threaded
+   * No wallpaper
+   * One core developer
+*** Global keybindings
+#+BEGIN_SRC emacs-lisp
+ (exwm-input-set-simulation-keys
+     '(
+       ;; cut/paste
+       ([?\C-w] . ?\C-x)
+       ([?\M-w] . ?\C-c)
+       ([?\C-y] . ?\C-v)
+       ;; search
+       ([?\C-s] . ?\C-f)))
+#+END_SRC
+*** Randr
+#+BEGIN_SRC emacs-lisp
+(require 'exwm-randr)
+  (setq exwm-randr-workspace-output-plist '(0 "eDP1" 1 "HDMI1"))
+  (add-hook 'exwm-randr-screen-change-hook
+    (lambda ()
+      (start-process-shell-command
+        "xrandr" nil "xrandr --output HDMI1 --right-of eDP1 --auto")))
+(exwm-randr-enable)
+#+END_SRC
