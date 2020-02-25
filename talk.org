@@ -30,7 +30,6 @@
    * In Vim your OS is the IDE
    * In Emacs your IDE is the OS
 * Emacs overview
-* Emacs overview
 ** History
    * Started at MIT in 1972
    * Based on TECO
@@ -203,8 +202,6 @@
 ** TRAMP
    * Transparent Remote (file) Access, Multiple Protocol
    * Works over FTP, SSH, etc
-* Emacs as an IDE
-* Org mode
 * Org mode
   Your life in plain text
 ** Purpose
@@ -284,7 +281,6 @@
 #+END_SRC
 *** Report
 [[./images/ledger.png]]
-* EmacsOS
 * EmacsOS
 ** Window manager (EXWM)
    * Same config
