@@ -40,7 +40,16 @@
     * Small core written in C
     * Everything else is ELisp
 ** Packages
+   * Small Lisp programs
+   * Implement additional features
     [[file:./images/packages.png]]
+** Some notation
+   * Buffers
+   * Windows
+   * Frames
+** Some notation
+   #+ATTR_HTML: :height 200%, :width 200%
+   [[./images/notation.png]]
 ** Modes
 *** Major modes
    * Each buffer has a major mode
@@ -54,13 +63,6 @@
 *** Workflow
     * Vim :: Open as needed
     * Emacs :: Open it once and never close it
-** Some notation
-   * Buffers
-   * Windows
-   * Frames
-** Some notation
-   #+ATTR_HTML: :height 200%, :width 200%
-   [[./images/notation.png]]
 * Emacs as an IDE
 ** Text Navigation
    * Move a char forward :: <C-f>

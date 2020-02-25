@@ -28,8 +28,8 @@
 <div class="slides">
 
 <section>
-<section id="slide-org6804ab7">
-<h2 id="org6804ab7">Living inside Emacs</h2>
+<section id="slide-org7714a7f">
+<h2 id="org7714a7f">Living inside Emacs</h2>
 
 <div class="figure">
 <p><img src="./images/title.png" alt="title.png" />
@@ -38,8 +38,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org932bb71">
-<h2 id="org932bb71">whoami</h2>
+<section id="slide-org8d558f5">
+<h2 id="org8d558f5">whoami</h2>
 <ul>
 <li>Eduardo Jorge</li>
 <li>Masters Student</li>
@@ -47,8 +47,8 @@
 
 </ul>
 </section>
-<section id="slide-orgf420d84">
-<h3 id="orgf420d84">Confession</h3>
+<section id="slide-org3dc91a3">
+<h3 id="org3dc91a3">Confession</h3>
 <p>
 Ex vim fanboy
 </p>
@@ -60,37 +60,37 @@ Ex vim fanboy
 </section>
 </section>
 <section>
-<section id="slide-org4ed5d5a">
-<h2 id="org4ed5d5a">Table of contents</h2>
+<section id="slide-org680dd3b">
+<h2 id="org680dd3b">Table of contents</h2>
 <ul>
-<li><a href="#/slide-org1daab9c">Emacs VS (neo)vi(m)</a></li>
-<li><a href="#/slide-org81d0d6c">Emacs overview</a></li>
-<li><a href="#/slide-org69d98bf">Emacs as an IDE</a></li>
-<li><a href="#/slide-org90344b8">Org mode</a></li>
-<li><a href="#/slide-org9f556f0">EmacsOS</a></li>
+<li><a href="#/slide-org73bacfc">Emacs VS (neo)vi(m)</a></li>
+<li><a href="#/slide-orgaf4e473">Emacs overview</a></li>
+<li><a href="#/slide-org10aebe0">Emacs as an IDE</a></li>
+<li><a href="#/slide-orgb71ca63">Org mode</a></li>
+<li><a href="#/slide-org742c9ed">EmacsOS</a></li>
 
 </ul>
 </section>
 </section>
 <section>
-<section id="slide-org1daab9c">
-<h2 id="org1daab9c">Emacs VS (neo)vi(m)</h2>
+<section id="slide-org73bacfc">
+<h2 id="org73bacfc">Emacs VS (neo)vi(m)</h2>
 
 <div class="figure">
 <p><img src="./images/emacsvim.png" alt="emacsvim.png" height="200%," width="200%" />
 </p>
 </div>
 </section>
-<section id="slide-org138476f">
-<h3 id="org138476f">As a text editor</h3>
+<section id="slide-org67a0099">
+<h3 id="org67a0099">As a text editor</h3>
 <ul>
 <li>Vim is a text editor</li>
 <li>Emacs HAS a text editor</li>
 
 </ul>
 </section>
-<section id="slide-orgea276a1">
-<h3 id="orgea276a1">As an IDE</h3>
+<section id="slide-orgd5a9f00">
+<h3 id="orgd5a9f00">As an IDE</h3>
 <ul>
 <li>In Vim your OS is the IDE</li>
 <li>In Emacs your IDE is the OS</li>
@@ -99,13 +99,13 @@ Ex vim fanboy
 </section>
 </section>
 <section>
-<section id="slide-org81d0d6c">
-<h2 id="org81d0d6c">Emacs overview</h2>
-<div class="outline-text-2" id="text-org81d0d6c">
+<section id="slide-orgaf4e473">
+<h2 id="orgaf4e473">Emacs overview</h2>
+<div class="outline-text-2" id="text-orgaf4e473">
 </div>
 </section>
-<section id="slide-org6fa8b1d">
-<h3 id="org6fa8b1d">History</h3>
+<section id="slide-orgc4c454e">
+<h3 id="orgc4c454e">History</h3>
 <ul>
 <li>Started at MIT in 1972</li>
 <li>Based on TECO</li>
@@ -114,13 +114,13 @@ Ex vim fanboy
 
 </ul>
 </section>
-<section id="slide-org5445e07">
-<h3 id="org5445e07">More than a text editor</h3>
-<div class="outline-text-3" id="text-org5445e07">
+<section id="slide-org137a00d">
+<h3 id="org137a00d">More than a text editor</h3>
+<div class="outline-text-3" id="text-org137a00d">
 </div>
 </section>
-<section id="slide-org17b7972">
-<h4 id="org17b7972">Framework to create IDEs</h4>
+<section id="slide-org5c19b18">
+<h4 id="org5c19b18">Framework to create IDEs</h4>
 <ul>
 <li>Extensible</li>
 <li>Small core written in C</li>
@@ -128,56 +128,17 @@ Ex vim fanboy
 
 </ul>
 </section>
-<section id="slide-org2269734">
-<h3 id="org2269734">Packages</h3>
-
-<div class="figure">
-<p><img src="./images/packages.png" alt="packages.png" />
-</p>
-</div>
-</section>
-<section id="slide-org779328c">
-<h3 id="org779328c">Modes</h3>
-<div class="outline-text-3" id="text-org779328c">
-</div>
-</section>
-<section id="slide-org469456c">
-<h4 id="org469456c">Major modes</h4>
+<section id="slide-org4d90d86">
+<h3 id="org4d90d86">Packages</h3>
 <ul>
-<li>Each buffer has a major mode</li>
-<li>Each major mode customizes Emac's behavior</li>
+<li>Small Lisp programs</li>
+<li>Implement additional features
+<img src="./images/packages.png" alt="packages.png" /></li>
 
 </ul>
 </section>
-<section id="slide-orgabc3aef">
-<h4 id="orgabc3aef">Minor modes</h4>
-<ul>
-<li>Each buffer has many minor modes</li>
-<li>Minor modes extend functionalities</li>
-
-</ul>
-</section>
-<section id="slide-orga1231c0">
-<h3 id="orga1231c0">Unix philosophy and workflow</h3>
-<div class="outline-text-3" id="text-orga1231c0">
-</div>
-</section>
-<section id="slide-orgb6a80de">
-<h4 id="orgb6a80de">Unix philosophy</h4>
-<p>
-Do one thing and do it well
-</p>
-</section>
-<section id="slide-org22ddcb2">
-<h4 id="org22ddcb2">Workflow</h4>
-<dl>
-<dt>Vim</dt><dd>Open as needed</dd>
-<dt>Emacs</dt><dd>Open it once and never close it</dd>
-
-</dl>
-</section>
-<section id="slide-orgc3dc610">
-<h3 id="orgc3dc610">Some notation</h3>
+<section id="slide-orgb332810">
+<h3 id="orgb332810">Some notation</h3>
 <ul>
 <li>Buffers</li>
 <li>Windows</li>
@@ -185,23 +146,63 @@ Do one thing and do it well
 
 </ul>
 </section>
-<section id="slide-org2aa5d61">
-<h3 id="org2aa5d61">Some notation</h3>
+<section id="slide-org4286c9a">
+<h3 id="org4286c9a">Some notation</h3>
 
 <div class="figure">
 <p><img src="./images/notation.png" alt="notation.png" height="200%," width="200%" />
 </p>
 </div>
 </section>
-</section>
-<section>
-<section id="slide-org69d98bf">
-<h2 id="org69d98bf">Emacs as an IDE</h2>
-<div class="outline-text-2" id="text-org69d98bf">
+<section id="slide-orga667ccf">
+<h3 id="orga667ccf">Modes</h3>
+<div class="outline-text-3" id="text-orga667ccf">
 </div>
 </section>
-<section id="slide-org2f74a6c">
-<h3 id="org2f74a6c">Text Navigation</h3>
+<section id="slide-org960a5c3">
+<h4 id="org960a5c3">Major modes</h4>
+<ul>
+<li>Each buffer has a major mode</li>
+<li>Each major mode customizes Emac's behavior</li>
+
+</ul>
+</section>
+<section id="slide-orgcf8ebe1">
+<h4 id="orgcf8ebe1">Minor modes</h4>
+<ul>
+<li>Each buffer has many minor modes</li>
+<li>Minor modes extend functionalities</li>
+
+</ul>
+</section>
+<section id="slide-orgf959f4c">
+<h3 id="orgf959f4c">Unix philosophy and workflow</h3>
+<div class="outline-text-3" id="text-orgf959f4c">
+</div>
+</section>
+<section id="slide-org088dc0b">
+<h4 id="org088dc0b">Unix philosophy</h4>
+<p>
+Do one thing and do it well
+</p>
+</section>
+<section id="slide-orgb2bac41">
+<h4 id="orgb2bac41">Workflow</h4>
+<dl>
+<dt>Vim</dt><dd>Open as needed</dd>
+<dt>Emacs</dt><dd>Open it once and never close it</dd>
+
+</dl>
+</section>
+</section>
+<section>
+<section id="slide-org10aebe0">
+<h2 id="org10aebe0">Emacs as an IDE</h2>
+<div class="outline-text-2" id="text-org10aebe0">
+</div>
+</section>
+<section id="slide-orgd8cea52">
+<h3 id="orgd8cea52">Text Navigation</h3>
 <dl>
 <dt>Move a char forward</dt><dd>&lt;C-f&gt;</dd>
 <dt>Move a word forward</dt><dd>&lt;M-f&gt;</dd>
@@ -211,8 +212,8 @@ Do one thing and do it well
 
 </dl>
 </section>
-<section id="slide-org6c17698">
-<h4 id="org6c17698">What you actually do</h4>
+<section id="slide-orgbd1b5ad">
+<h4 id="orgbd1b5ad">What you actually do</h4>
 <dl>
 <dt>Search</dt><dd>&lt;C-s&gt; or &lt;C-r&gt;</dd>
 <dt>End of line</dt><dd>&lt;C-e&gt;</dd>
@@ -222,8 +223,8 @@ Do one thing and do it well
 
 </dl>
 </section>
-<section id="slide-orga06a081">
-<h4 id="orga06a081">Expand region</h4>
+<section id="slide-org7370583">
+<h4 id="org7370583">Expand region</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package expand<span style="color: #ffb86c;">-</span>region
@@ -232,22 +233,22 @@ Do one thing and do it well
 </code></pre>
 </div>
 </section>
-<section id="slide-orgfa565e4">
-<h4 id="orgfa565e4">Screw it use vim</h4>
+<section id="slide-orgf27035b">
+<h4 id="orgf27035b">Screw it use vim</h4>
 
 <div class="figure">
 <p><img src="./images/evilmeme.jpeg" alt="evilmeme.jpeg" height="200%," width="200%" />
 </p>
 </div>
 </section>
-<section id="slide-org02b4902">
-<h4 id="org02b4902">Screw it emulate vim</h4>
+<section id="slide-org24f0c6c">
+<h4 id="org24f0c6c">Screw it emulate vim</h4>
 <p>
 Evil mode
 </p>
 </section>
-<section id="slide-orgd28ac5e">
-<h3 id="orgd28ac5e">Major programming modes</h3>
+<section id="slide-org82b1757">
+<h3 id="org82b1757">Major programming modes</h3>
 <ul>
 <li>Indentation</li>
 <li>Syntax highlight</li>
@@ -257,24 +258,24 @@ Evil mode
 
 </ul>
 </section>
-<section id="slide-org51bd1af">
-<h4 id="org51bd1af">Config</h4>
+<section id="slide-orga49b1c9">
+<h4 id="orga49b1c9">Config</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package go<span style="color: #ffb86c;">-</span>mode <span style="color: #ffb86c;">:</span>ensure t)
 </code></pre>
 </div>
 </section>
-<section id="slide-orga5700d1">
-<h3 id="orga5700d1">Syntax checking with Flycheck</h3>
+<section id="slide-org1f7b562">
+<h3 id="org1f7b562">Syntax checking with Flycheck</h3>
 
 <div class="figure">
 <p><img src="./images/flycheck.png" alt="flycheck.png" />
 </p>
 </div>
 </section>
-<section id="slide-org9a563fe">
-<h4 id="org9a563fe">Config</h4>
+<section id="slide-org8305e7b">
+<h4 id="org8305e7b">Config</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package <span style="color: #8be9fd;">flycheck</span>
@@ -284,16 +285,16 @@ Evil mode
 </code></pre>
 </div>
 </section>
-<section id="slide-orgcdee667">
-<h3 id="orgcdee667">Code completion with Company</h3>
+<section id="slide-org8334532">
+<h3 id="org8334532">Code completion with Company</h3>
 
 <div class="figure">
 <p><img src="./images/company.png" alt="company.png" />
 </p>
 </div>
 </section>
-<section id="slide-org9892307">
-<h4 id="org9892307">Config</h4>
+<section id="slide-org284568e">
+<h4 id="org284568e">Config</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package <span style="color: #8be9fd;">company</span>
@@ -307,8 +308,8 @@ Evil mode
 </code></pre>
 </div>
 </section>
-<section id="slide-org6ae23f2">
-<h3 id="org6ae23f2">Bring it all together with LSP</h3>
+<section id="slide-orge881aed">
+<h3 id="orge881aed">Bring it all together with LSP</h3>
 <ul>
 <li>Language Server Protocol</li>
 <li id="Client">Text editor or IDE</li>
@@ -316,8 +317,8 @@ Evil mode
 
 </ul>
 </section>
-<section id="slide-orgc09d8ce">
-<h4 id="orgc09d8ce">Features</h4>
+<section id="slide-org9201c4d">
+<h4 id="org9201c4d">Features</h4>
 <ul>
 <li>Auto complete</li>
 <li>Goto definition</li>
@@ -326,16 +327,16 @@ Evil mode
 
 </ul>
 </section>
-<section id="slide-org11b3782">
-<h4 id="org11b3782">Features</h4>
+<section id="slide-org378c0d9">
+<h4 id="org378c0d9">Features</h4>
 
 <div class="figure">
 <p><img src="./images/lsp1.png" alt="lsp1.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgb60ca1b">
-<h4 id="orgb60ca1b">Config</h4>
+<section id="slide-orge280fb9">
+<h4 id="orge280fb9">Config</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package lsp<span style="color: #ffb86c;">-</span>mode
@@ -345,8 +346,8 @@ Evil mode
 </code></pre>
 </div>
 </section>
-<section id="slide-org13b67ab">
-<h4 id="org13b67ab">Documentation</h4>
+<section id="slide-org341c60f">
+<h4 id="org341c60f">Documentation</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package lsp<span style="color: #ffb86c;">-</span>ui
@@ -355,16 +356,16 @@ Evil mode
 </code></pre>
 </div>
 </section>
-<section id="slide-org149be31">
-<h4 id="org149be31">Documentation</h4>
+<section id="slide-org264a7a1">
+<h4 id="org264a7a1">Documentation</h4>
 
 <div class="figure">
 <p><img src="./images/lsp2.png" alt="lsp2.png" height="80%," width="80%" />
 </p>
 </div>
 </section>
-<section id="slide-org4c21d12">
-<h4 id="org4c21d12">Debugger</h4>
+<section id="slide-org6d7e31a">
+<h4 id="org6d7e31a">Debugger</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package dap<span style="color: #ffb86c;">-</span>mode
@@ -376,8 +377,8 @@ Evil mode
 </code></pre>
 </div>
 </section>
-<section id="slide-org67198f3">
-<h4 id="org67198f3">Integrate with company</h4>
+<section id="slide-orgbbb2748">
+<h4 id="orgbbb2748">Integrate with company</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package company<span style="color: #ffb86c;">-</span>lsp <span style="color: #ffb86c;">:</span>commands company<span style="color: #ffb86c;">-</span>lsp)
@@ -389,8 +390,8 @@ Evil mode
 </p>
 </div>
 </section>
-<section id="slide-org8c3f9c6">
-<h3 id="org8c3f9c6">Code snippets</h3>
+<section id="slide-org1cba21b">
+<h3 id="org1cba21b">Code snippets</h3>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(use<span style="color: #ffb86c;">-</span>package <span style="color: #8be9fd;">yasnippet</span>
@@ -404,8 +405,8 @@ Evil mode
 </code></pre>
 </div>
 </section>
-<section id="slide-orgf57337e">
-<h3 id="orgf57337e">Projectile</h3>
+<section id="slide-org4eef308">
+<h3 id="org4eef308">Projectile</h3>
 <ul>
 <li>Operate on a project level</li>
 <li>Find project files</li>
@@ -424,16 +425,16 @@ Evil mode
 </code></pre>
 </div>
 </section>
-<section id="slide-orgf288d78">
-<h3 id="orgf288d78">Magit</h3>
+<section id="slide-orged7941e">
+<h3 id="orged7941e">Magit</h3>
 
 <div class="figure">
 <p><img src="./images/magit.png" alt="magit.png" height="60%," width="60%" />
 </p>
 </div>
 </section>
-<section id="slide-orgd84e986">
-<h4 id="orgd84e986">Why</h4>
+<section id="slide-org1de3d0a">
+<h4 id="org1de3d0a">Why</h4>
 <ul>
 <li>Same keybindings</li>
 <li>Same text render and highlight when coding</li>
@@ -441,8 +442,8 @@ Evil mode
 
 </ul>
 </section>
-<section id="slide-org58b250e">
-<h4 id="org58b250e">How it works</h4>
+<section id="slide-orgb828b1d">
+<h4 id="orgb828b1d">How it works</h4>
 <ul>
 <li>Top level actions</li>
 <li>Sub-actions</li>
@@ -450,16 +451,16 @@ Evil mode
 
 </ul>
 </section>
-<section id="slide-orgf756fd3">
-<h4 id="orgf756fd3">Example</h4>
+<section id="slide-org9dd6375">
+<h4 id="org9dd6375">Example</h4>
 
 <div class="figure">
 <p><img src="./images/r.png" alt="r.png" height="80%," width="80%" />
 </p>
 </div>
 </section>
-<section id="slide-org2fc527b">
-<h3 id="org2fc527b">TRAMP</h3>
+<section id="slide-org6f83088">
+<h3 id="org6f83088">TRAMP</h3>
 <ul>
 <li>Transparent Remote (file) Access, Multiple Protocol</li>
 <li>Works over FTP, SSH, etc</li>
@@ -468,19 +469,19 @@ Evil mode
 </section>
 </section>
 <section>
-<section id="slide-org90344b8">
-<h2 id="org90344b8">Org mode</h2>
+<section id="slide-orgb71ca63">
+<h2 id="orgb71ca63">Org mode</h2>
 <p>
 Your life in plain text
 </p>
 </section>
-<section id="slide-orgeb37df4">
-<h3 id="orgeb37df4">Purpose</h3>
-<div class="outline-text-3" id="text-orgeb37df4">
+<section id="slide-orgc055eb5">
+<h3 id="orgc055eb5">Purpose</h3>
+<div class="outline-text-3" id="text-orgc055eb5">
 </div>
 </section>
-<section id="slide-org0bda7a6">
-<h4 id="org0bda7a6">A fast and effective plain-text system for</h4>
+<section id="slide-org9cdfd67">
+<h4 id="org9cdfd67">A fast and effective plain-text system for</h4>
 <ul>
 <li>Keeping notes</li>
 <li>Maintaining TODO lists</li>
@@ -489,13 +490,13 @@ Your life in plain text
 
 </ul>
 </section>
-<section id="slide-org34fac20">
-<h3 id="org34fac20">Note taking</h3>
-<div class="outline-text-3" id="text-org34fac20">
+<section id="slide-orga49dea6">
+<h3 id="orga49dea6">Note taking</h3>
+<div class="outline-text-3" id="text-orga49dea6">
 </div>
 </section>
-<section id="slide-org085bf6b">
-<h4 id="org085bf6b">Text</h4>
+<section id="slide-org110653a">
+<h4 id="org110653a">Text</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim><span style="color: #ffb86c;">*</span> Dependable Distributed Systems
@@ -508,21 +509,21 @@ Your life in plain text
 </code></pre>
 </div>
 </section>
-<section id="slide-org68ad0ad">
-<h4 id="org68ad0ad">Result</h4>
+<section id="slide-orgfd38b93">
+<h4 id="orgfd38b93">Result</h4>
 
 <div class="figure">
 <p><img src="./images/notes.png" alt="notes.png" />
 </p>
 </div>
 </section>
-<section id="slide-org1221ea9">
-<h3 id="org1221ea9"><span class="todo TODO">TODO</span> s</h3>
-<div class="outline-text-3" id="text-org1221ea9">
+<section id="slide-org4028a97">
+<h3 id="org4028a97"><span class="todo TODO">TODO</span> s</h3>
+<div class="outline-text-3" id="text-org4028a97">
 </div>
 </section>
-<section id="slide-org9ad468f">
-<h4 id="org9ad468f">Text</h4>
+<section id="slide-org3c02fef">
+<h4 id="org3c02fef">Text</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>#<span style="color: #ffb86c;">+</span>TODO<span style="color: #ffb86c;">:</span> TODO IN<span style="color: #ffb86c;">-</span>PROGRESS HELD<span style="color: #ffb86c;">-</span>BLOCKED HELD<span style="color: #ffb86c;">-</span>FROZEN REVIEW DONE
@@ -539,32 +540,32 @@ DEADLINE<span style="color: #ffb86c;">:</span> <span style="color: #ffb86c;">&lt
 </code></pre>
 </div>
 </section>
-<section id="slide-orgf7716c8">
-<h4 id="orgf7716c8">Result</h4>
+<section id="slide-org8924950">
+<h4 id="org8924950">Result</h4>
 
 <div class="figure">
 <p><img src="./images/todo.png" alt="todo.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgc153f2b">
-<h3 id="orgc153f2b">Agenda</h3>
+<section id="slide-org621d340">
+<h3 id="org621d340">Agenda</h3>
 
 <div class="figure">
 <p><img src="./images/agenda.png" alt="agenda.png" />
 </p>
 </div>
 </section>
-<section id="slide-org0080541">
-<h3 id="org0080541">Dashboard</h3>
+<section id="slide-org81a9769">
+<h3 id="org81a9769">Dashboard</h3>
 
 <div class="figure">
 <p><img src="./images/dash.png" alt="dash.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgcd62888">
-<h3 id="orgcd62888">Presentations with revealjs</h3>
+<section id="slide-org3e96b6e">
+<h3 id="org3e96b6e">Presentations with revealjs</h3>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(<span style="color: #ff79c6; font-weight: bold;">defun</span> herulume<span style="color: #ffb86c;">/</span>publish<span style="color: #ffb86c;">-</span>talk (message)
@@ -578,24 +579,24 @@ DEADLINE<span style="color: #ffb86c;">:</span> <span style="color: #ffb86c;">&lt
 </code></pre>
 </div>
 </section>
-<section id="slide-org54dfa88">
-<h3 id="org54dfa88">Email</h3>
+<section id="slide-org142fcaa">
+<h3 id="org142fcaa">Email</h3>
 
 <div class="figure">
 <p><img src="./images/mail.png" alt="mail.png" height="80%," width="80%" />
 </p>
 </div>
 </section>
-<section id="slide-orgfda86d6">
-<h3 id="orgfda86d6">Ledger and finances</h3>
+<section id="slide-org3bb6757">
+<h3 id="org3bb6757">Ledger and finances</h3>
 <ul>
 <li>For every debit there is at least one credit</li>
 <li>All debits and credits in the same transaction, must sum to zero</li>
 
 </ul>
 </section>
-<section id="slide-org1dd6ba8">
-<h4 id="org1dd6ba8">Terminology</h4>
+<section id="slide-orged58900">
+<h4 id="orged58900">Terminology</h4>
 <dl>
 <dt>Account</dt><dd>A label describing an amount of something</dd>
 <dt>Credit</dt><dd>The addition of value to an account</dd>
@@ -604,8 +605,8 @@ DEADLINE<span style="color: #ffb86c;">:</span> <span style="color: #ffb86c;">&lt
 
 </dl>
 </section>
-<section id="slide-org888e342">
-<h4 id="org888e342">Five common categories of accounts</h4>
+<section id="slide-orgcc94402">
+<h4 id="orgcc94402">Five common categories of accounts</h4>
 <dl>
 <dt>Assets</dt><dd>Bank accounts, wallet</dd>
 <dt>Income</dt><dd>paychecks, gifts, interest</dd>
@@ -615,8 +616,8 @@ DEADLINE<span style="color: #ffb86c;">:</span> <span style="color: #ffb86c;">&lt
 
 </dl>
 </section>
-<section id="slide-orge2dc674">
-<h4 id="orge2dc674">Example of a transaction</h4>
+<section id="slide-org31dd28e">
+<h4 id="org31dd28e">Example of a transaction</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>2020<span style="color: #ffb86c;">-</span>01<span style="color: #ffb86c;">-</span>30 Coffee
@@ -626,8 +627,8 @@ DEADLINE<span style="color: #ffb86c;">:</span> <span style="color: #ffb86c;">&lt
 </code></pre>
 </div>
 </section>
-<section id="slide-org6e26545">
-<h4 id="org6e26545">Report</h4>
+<section id="slide-org684d202">
+<h4 id="org684d202">Report</h4>
 
 <div class="figure">
 <p><img src="./images/ledger.png" alt="ledger.png" />
@@ -636,13 +637,13 @@ DEADLINE<span style="color: #ffb86c;">:</span> <span style="color: #ffb86c;">&lt
 </section>
 </section>
 <section>
-<section id="slide-org9f556f0">
-<h2 id="org9f556f0">EmacsOS</h2>
-<div class="outline-text-2" id="text-org9f556f0">
+<section id="slide-org742c9ed">
+<h2 id="org742c9ed">EmacsOS</h2>
+<div class="outline-text-2" id="text-org742c9ed">
 </div>
 </section>
-<section id="slide-orgd8a8100">
-<h3 id="orgd8a8100">Window manager (EXWM)</h3>
+<section id="slide-org41ba2c0">
+<h3 id="org41ba2c0">Window manager (EXWM)</h3>
 <ul>
 <li>Same config</li>
 <li>Global keybindings</li>
@@ -652,8 +653,8 @@ DEADLINE<span style="color: #ffb86c;">:</span> <span style="color: #ffb86c;">&lt
 
 </ul>
 </section>
-<section id="slide-orga75ec69">
-<h4 id="orga75ec69">Global keybindings</h4>
+<section id="slide-org3a4c819">
+<h4 id="org3a4c819">Global keybindings</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(exwm<span style="color: #ffb86c;">-</span>input<span style="color: #ffb86c;">-</span>set<span style="color: #ffb86c;">-</span>simulation<span style="color: #ffb86c;">-</span>keys
@@ -667,8 +668,8 @@ DEADLINE<span style="color: #ffb86c;">:</span> <span style="color: #ffb86c;">&lt
 </code></pre>
 </div>
 </section>
-<section id="slide-org823a70a">
-<h4 id="org823a70a">Randr</h4>
+<section id="slide-orgf9d23d1">
+<h4 id="orgf9d23d1">Randr</h4>
 <div class="org-src-container">
 
 <pre  class="src src-emacs-lisp"><code trim>(<span style="color: #ff79c6; font-weight: bold;">require</span> 'exwm<span style="color: #ffb86c;">-</span>randr)
